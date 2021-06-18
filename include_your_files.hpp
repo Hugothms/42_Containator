@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes_your_files.hpp                            :+:      :+:    :+:   */
+/*   include_your_files.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llefranc <llefranc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthomas <hthomas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 11:23:23 by llefranc          #+#    #+#             */
-/*   Updated: 2021/04/08 11:24:07 by llefranc         ###   ########.fr       */
+/*   Updated: 2021/06/09 15:23:46 by hthomas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INCLUDE_YOUR_FILES_HPP
 #define INCLUDE_YOUR_FILES_HPP
 
-#include "../42_ft_containers/containers/vector.hpp"
-#include "../42_ft_containers/containers/list.hpp"
-#include "../42_ft_containers/containers/stack.hpp"
-#include "../42_ft_containers/containers/queue.hpp"
-#include "../42_ft_containers/containers/map.hpp"
+#include "../ft_containers/containers/vector.hpp"
+#include "../ft_containers/containers/list.hpp"
+#include "../ft_containers/containers/stack.hpp"
+#include "../ft_containers/containers/queue.hpp"
+#include "../ft_containers/containers/map.hpp"
 
 #endif

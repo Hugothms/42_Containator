@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_type.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llefranc <llefranc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthomas <hthomas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:32:08 by llefranc          #+#    #+#             */
-/*   Updated: 2021/02/17 10:52:12 by llefranc         ###   ########.fr       */
+/*   Updated: 2021/06/15 16:08:14 by hthomas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ inline void print_type<std::string>() { std::cout << "std::string\n"; }
 template <>
 inline void print_type<std::pair<const int, std::string> >() { std::cout << "pair(const int, std::string)\n"; }
 
-template <>
-inline void print_type<ft::pair<const int, std::string> >() { std::cout << "pair(const int, std::string)\n"; }
+// template <>
+// inline void print_type<ft::pair<const int, std::string> >() { std::cout << "pair(const int, std::string)\n"; }
 
 template <>
 inline void print_type<std::pair<const std::string, int> >() { std::cout << "pair(const std::string, int)\n"; }
 
-template <>
-inline void print_type<ft::pair<const std::string, int> >() { std::cout << "pair(const std::string, int)\n"; }
+// template <>
+// inline void print_type<ft::pair<const std::string, int> >() { std::cout << "pair(const std::string, int)\n"; }
 
 
 /**
@@ -55,7 +55,7 @@ inline void printContainerInfo(const std::string& info, int testNb)
     std::cout << "\n\n--------------------------------\n";
     std::cout << "------\tTESTING " << info << " " << testNb << " ------\n";
     std::cout << "--------------------------------\n";
-        
+
     std::cout << "\t\t" << info << " TYPE: ";
     print_type<typename T::value_type>();
 }

@@ -20,7 +20,7 @@ void	mapTest_Size(T& cont)
 {
 	std::string name("size:");
 	std::cout << "\n---------------------";
-		
+
 	printTestName("24", name);  std::cout << cont.size();
 }
 
@@ -29,7 +29,7 @@ void	mapTest_Empty(T& cont)
 {
 	std::string name("empty:");
 	std::cout << "\n---------------------";
-		
+
 	printTestName("33", name);  std::cout << cont.empty();
 }
 
@@ -38,7 +38,7 @@ void	mapTest_Iterators(T& cont)
 {
 	std::string name("iterators:");
 	std::cout << "\n---------------------";
-		
+
 	printTestName("42", name, "operator++");
 	for (typename T::const_iterator it = cont.begin(); it != cont.end(); it++)
 		std::cout << "[" << it->first << "][" << it->second << "] | ";
@@ -66,14 +66,14 @@ void	mapTest_ReverseIterators(T& cont)
 {
 	std::string name("reverse iterators:");
 	std::cout << "\n---------------------";
-		
+
 	printTestName("70", name, "++operator");
 	for (typename T::const_reverse_iterator it = cont.rbegin(); it != cont.rend(); ++it)
 		std::cout << "[" << it->first << "][" << it->second << "] | ";
 
 	printTestName("74", name, "operator++");
 	for (typename T::const_reverse_iterator it = cont.rbegin(); it != cont.rend(); it++)
-		std::cout << "[" << it->first << "][" << it->second << "] | ";  
+		std::cout << "[" << it->first << "][" << it->second << "] | ";
 
 	if (cont.size())
 	{
@@ -115,11 +115,11 @@ void	mapTest_Clear(T& cont)
 {
 	std::string name("clear:");
 	std::cout << "\n---------------------";
-		
+
 	T tmp = cont;
 	printTestName("TOREPLACE", name);   std::cout << "size before clear: " << tmp.size();
 	tmp.clear();
-		
+
 	printTestName("TOREPLACE", name);   std::cout << "size after clear: " << tmp.size();
 
 	// Allows to value initialize (case size is 0, we can't insert cont.begin())
@@ -141,7 +141,7 @@ void	mapTest_Swap(T& cont)
 {
 	std::string name("swap:");
 	std::cout << "\n---------------------";
-		
+
 	T tmp(cont);
 	T tmp2(cont);
 
@@ -153,8 +153,8 @@ void	mapTest_Swap(T& cont)
 		x = new typename T::value_type();
 
 	tmp.insert(*x);
-		
-	printTestName("TOREPLACE", name);	
+
+	printTestName("TOREPLACE", name);
 	std::cout << "size of tmp = " << tmp.size() << " and size of tmp2 = " << tmp2.size();
 
 	tmp2.swap(tmp);
@@ -189,17 +189,17 @@ void	mapTest_InsertRange(T& cont)
 	tmpToInsert.insert(*x);
 
 	tmp.insert(tmpToInsert.begin(), tmpToInsert.begin());
-		
+
 	printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 	printMapContainer("TOREPLACE", name, tmp);
-		
+
 	tmp.insert(tmpToInsert.begin(), tmpToInsert.end());
-		
+
 	printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 	printMapContainer("TOREPLACE", name, tmp);
 
 	tmp.insert(tmp.begin(), tmp.end());
-		
+
 	printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 	printMapContainer("TOREPLACE", name, tmp);
 
@@ -249,7 +249,7 @@ void	mapTest_InsertToAPosition(T& cont)
 		printMapContainer("TOREPLACE", name, tmp3);
 	}
 
-	delete x;   
+	delete x;
 }
 
 /**
@@ -283,7 +283,7 @@ void	mapTest_Insert1Elem(T& cont)
 	printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 	printMapContainer("TOREPLACE", name, tmp);
 
-	delete x;   
+	delete x;
 }
 
 template <typename T>
@@ -308,7 +308,7 @@ void	mapTest_EraseRange(T& cont)
 	// Erase nothing
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- erase nothing -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 
@@ -318,12 +318,12 @@ void	mapTest_EraseRange(T& cont)
 		tmp.erase(tmp.begin(), tmp.begin());
 		printMapContainer("TOREPLACE", name, tmp);
 	}
-		
+
 	// Erase last elem
 	if (cont.size())
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- erase last elem -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 
@@ -337,7 +337,7 @@ void	mapTest_EraseRange(T& cont)
 	if (cont.size())
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- erase everything except first elem -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 
@@ -372,7 +372,7 @@ void	mapTest_EraseToAPosition(T& cont)
 	if (cont.size())
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- erase first elem -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 		printMapContainer("TOREPLACE", name, tmp);
@@ -393,7 +393,7 @@ void	mapTest_EraseToAPosition(T& cont)
 		printMapContainer("TOREPLACE", name, tmp);
 
 		tmp.erase(--tmp.end());
-		
+
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 		printMapContainer("TOREPLACE", name, tmp);
 	}
@@ -424,7 +424,7 @@ void	mapTest_EraseASpecificKey(T& cont)
 	if (cont.size())
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- erase first elem -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 		printMapContainer("TOREPLACE", name, tmp);
@@ -447,7 +447,7 @@ void	mapTest_EraseASpecificKey(T& cont)
 
 		printTestName("TOREPLACE", name);
 		std::cout << "return value: " << tmp.erase((--tmp.end())->first);
-		
+
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 		printMapContainer("TOREPLACE", name, tmp);
 	}
@@ -473,7 +473,7 @@ void	mapTest_EraseASpecificKey(T& cont)
 		printTestName("TOREPLACE", name);   std::cout << "----- erase a pair value initialized -----";
 
 		T tmp = cont;
-		
+
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 		printMapContainer("TOREPLACE", name, tmp);
 
@@ -495,7 +495,7 @@ void	mapTest_find(T& cont)
 	if (cont.size())
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- find first elem -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 
@@ -514,7 +514,7 @@ void	mapTest_find(T& cont)
 		printMapContainer("TOREPLACE", name, tmp);
 
 		typename T::const_iterator it = tmp.find((--tmp.end())->first);
-		
+
 		printTestName("TOREPLACE", name);   std::cout << "[" << it->first << "][" << it->second << "]";
 	}
 
@@ -559,7 +559,7 @@ void	mapTest_count(T& cont)
 	if (cont.size())
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- count first elem -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 		printMapContainer("TOREPLACE", name, tmp);
@@ -613,7 +613,7 @@ void	mapTest_lowerBound(T& cont)
 	if (cont.size())
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- iterator to first elem -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 		printMapContainer("TOREPLACE", name, tmp);
@@ -679,7 +679,7 @@ void	mapTest_upperBound(T& cont)
 	if (cont.size())
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- iterator to second elem -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 		printMapContainer("TOREPLACE", name, tmp);
@@ -753,7 +753,7 @@ void	mapTest_equalRange(T& cont)
 	if (cont.size())
 	{
 		printTestName("TOREPLACE", name);   std::cout << "----- iterator to second elem -----";
-		
+
 		T tmp = cont;
 		printTestName("TOREPLACE", name);   std::cout << "size of tmp = " << tmp.size();
 		printMapContainer("TOREPLACE", name, tmp);

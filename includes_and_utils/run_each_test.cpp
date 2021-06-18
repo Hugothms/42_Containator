@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run_each_test.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llefranc <llefranc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthomas <hthomas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:10:27 by llefranc          #+#    #+#             */
-/*   Updated: 2021/02/18 15:01:46 by llefranc         ###   ########.fr       */
+/*   Updated: 2021/06/18 15:35:35 by hthomas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void    testVector(const int (&arrInt)[20], const std::string (&arrString)[20])
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
     std::ofstream stdFile("results/vector_std.txt");
     std::ofstream ftFile("results/vector_ft.txt");
-        
+
 
     std::cout.rdbuf(stdFile.rdbuf()); //redirect std::cout to std::vector_result.txt
     constructVectorList<int, std::vector<int> >(arrInt, testNotConstVec<std::vector<int> >, testConstVec<const std::vector<int> >);
@@ -77,12 +77,12 @@ void    testQueue(const int (&arrInt)[20], const std::string (&arrString)[20])
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
     std::ofstream stdFile("results/queue_std.txt");
     std::ofstream ftFile("results/queue_ft.txt");
-        
-        
+
+
     std::cout.rdbuf(stdFile.rdbuf()); //redirect std::cout to std::queue_result.txt
     constructStackQueue<int, std::queue<int, std::list<int> >, std::list<int> >(arrInt, testNonConstQueue<std::queue<int, std::list<int> > >);
     constructStackQueue<std::string, std::queue<std::string, std::list<std::string> >, std::list<std::string> > (arrString, testNonConstQueue<std::queue<std::string, std::list<std::string> > >);
-    
+
     std::cout.rdbuf(ftFile.rdbuf()); //redirect std::cout to ft::queue_result.txt
     constructStackQueue<int, ft::queue<int, std::list<int> >, std::list<int> >(arrInt, testNonConstQueue<ft::queue<int, std::list<int> > >);
     constructStackQueue<std::string, ft::queue<std::string, ft::list<std::string> >, ft::list<std::string> >(arrString, testNonConstQueue<ft::queue<std::string, ft::list<std::string> > >);
@@ -95,8 +95,8 @@ void    testMap(const int (&arrInt)[20], const std::string (&arrString)[20])
     std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
     std::ofstream stdFile("results/map_std.txt");
     std::ofstream ftFile("results/map_ft.txt");
-        
-        
+
+
     std::cout.rdbuf(stdFile.rdbuf()); //redirect std::cout to ft::map_result.txt
     constructMap<int, std::string, std::map<int, std::string>, std::pair<int, std::string> >
         (arrInt, arrString, testNotConstMap<std::map<int, std::string> >, testConstMap<const std::map<int, std::string> >);
@@ -104,9 +104,9 @@ void    testMap(const int (&arrInt)[20], const std::string (&arrString)[20])
         (arrString, arrInt, testNotConstMap<std::map<std::string, int> >, testConstMap<const std::map<std::string, int> >);
 
     std::cout.rdbuf(ftFile.rdbuf()); //redirect std::cout to std::map_result.txt
-    constructMap<int, std::string, ft::map<int, std::string>, ft::pair<int, std::string> >
+    constructMap<int, std::string, ft::map<int, std::string>, std::pair<int, std::string> >
         (arrInt, arrString, testNotConstMap<ft::map<int, std::string> >, testConstMap<const ft::map<int, std::string> >);
-    constructMap<std::string, int, ft::map<std::string, int>, ft::pair<std::string, int> >
+    constructMap<std::string, int, ft::map<std::string, int>, std::pair<std::string, int> >
         (arrString, arrInt, testNotConstMap<ft::map<std::string, int> >, testConstMap<const ft::map<std::string, int> >);
 
     std::cout.rdbuf(coutbuf); //reset to standard output again
